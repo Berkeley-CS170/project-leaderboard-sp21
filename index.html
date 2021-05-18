@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
-    <title>CS 170 Spring 2021 Project Leaderboard</title>
+    <title>CS 170 Fall 2020 Project Leaderboard</title>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -27,7 +27,7 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand nav-title" onclick="moveToIndex()"><span class="lg-view">CS 170 Spring 2021 Project Leaderboard</span><span class="sm-view">CS 170 Leaderboard</span></a>
+      <a class="navbar-brand nav-title" onclick="moveToIndex()"><span class="lg-view">CS 170 Fall 2020 Project Leaderboard</span><span class="sm-view">CS 170 Leaderboard</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,20 +73,6 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
     <script>
-
-    var firebaseConfig = {
-    apiKey: "AIzaSyBeiDGiqmpz-r7RGQrJ8gFQoPCbC_mrJOI",
-    authDomain: "cs170-project-spring-2021.firebaseapp.com",
-    databaseURL: "https://cs170-project-spring-2021-default-rtdb.firebaseio.com",
-    projectId: "cs170-project-spring-2021",
-    storageBucket: "cs170-project-spring-2021.appspot.com",
-    messagingSenderId: "598669500965",
-    appId: "1:598669500965:web:c579b72c573f3979bf95cc",
-    measurementId: "G-S360CTJV4T"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
     async function refresh(graphName) {
         document.getElementById("table").innerHTML = '<div class="loader"></div>';
