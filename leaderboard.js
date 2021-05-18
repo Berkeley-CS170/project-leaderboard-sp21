@@ -8,9 +8,8 @@ let firebaseData = null;
 var dict = {}
 
 async function getFirebaseData() {
-    const response = await fetch('https://www.dropbox.com/s/6bnhgv9qk59z2au/cs170-project-spring-2021-default-rtdb-export.json?dl=1');
+    const response = await fetch('https://www.dl.dropboxusercontent.com/s/6bnhgv9qk59z2au/cs170-project-spring-2021-default-rtdb-export.json?dl=1');
     const data = await response.json();
-    console.log(data['teams']);
     return data;
 }
 
@@ -103,7 +102,7 @@ async function computeFullLeaderboard() {
     const finalEntries = [];
     const not_full_outputs = [];
     for (let name in namesAndRanks) {
-      const base_scores = namesAndRanks['Welcome_To_The_Leaderboard'];
+      const base_scores = namesAndRanks['WelcomeToTheLeaderboard'];
       const scores = namesAndRanks[name];
       test = scores;
       if (scores.length == totalInputs) {
@@ -167,7 +166,6 @@ function formatTable(sortedEntries, header, addRanks) {
       entry = sortedEntries[i];
       if (addRanks) {
         currentRank = ranks[i];
-        dict[entry[0]] = currentRank
         const rank = document.createElement('th');
         rank.innerHTML = currentRank;
         row.appendChild(rank);
@@ -179,7 +177,7 @@ function formatTable(sortedEntries, header, addRanks) {
       }
       table.appendChild(row);
   }
-  // console.log(dict)
+  console.log(dict)
   return table;
 }
 
@@ -236,7 +234,7 @@ async function generateLeaderboard(graphName) {
     } else {
       entries = await pullLeaderboard(graphName);
       if (entries.length > 0) {
-        header = ["#", "Team Name", "Happiness"];
+        header = ["#", "Team Name", "Score"];
         title = `<code>${graphName}.in</code>`;
       } else {
         header = [];
